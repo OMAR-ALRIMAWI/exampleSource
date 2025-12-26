@@ -1,12 +1,15 @@
-package com.example.examplesource
+package com.example.examplesource.ui
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import com.example.examplesource.R
 import com.example.examplesource.databinding.FragmentPaymentBinding
+import com.example.examplesource.domin.UserInfo
 
 class PaymentFragment : Fragment() {
     private lateinit var binding: FragmentPaymentBinding
@@ -25,8 +28,16 @@ class PaymentFragment : Fragment() {
 
     private fun initListener() {
         binding.btnAddCard.setOnClickListener {
-            if (isValidation())
-                findNavController().navigate(R.id.infoFragment)
+            if (isValidation()) {
+                val cardNumber = binding.edtCard.text
+                val cvc = binding.cvcEdittext.text
+                val date = binding.dateText.text
+                val userInfo = UserInfo(cardNumber.toString(), cvc.toString(),date.toString())
+              val bundle= bundleOf().apply {
+                  putParcelable("UserInfo",userInfo)
+              }
+                findNavController().navigate(R.id.infoFragment,bundle)
+            }
         }
     }
 
@@ -49,4 +60,3 @@ class PaymentFragment : Fragment() {
         return isVal
     }
 }
-
