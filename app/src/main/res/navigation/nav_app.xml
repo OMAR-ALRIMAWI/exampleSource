@@ -7,12 +7,12 @@
 
     <fragment
         android:id="@+id/paymentFragment"
-        android:name="com.example.examplesource.PaymentFragment"
+        android:name="com.example.examplesource.ui.PaymentFragment"
         android:label="fragment_payment"
         tools:layout="@layout/fragment_payment" />
     <fragment
         android:id="@+id/infoFragment"
-        android:name="com.example.examplesource.InfoFragment"
+        android:name="com.example.examplesource.ui.InfoFragment"
         android:label="fragment_info"
         tools:layout="@layout/fragment_info" />
 </navigation>

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="16dp"
-    tools:context=".PaymentFragment">
+    tools:context=".ui.PaymentFragment">
 
 
     <androidx.appcompat.widget.AppCompatTextView
@@ -56,6 +56,7 @@
         app:layout_constraintTop_toBottomOf="@id/til_card">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/date_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/dd_mm_yyyy"
